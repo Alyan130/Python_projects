@@ -1,0 +1,16 @@
+[
+     {
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "publication": 1960,
+          "genre": "Fiction",
+          "read": "yes"
+     },
+     {
+          "title": "Space craft",
+          "author": "will young",
+          "publication": 1056,
+          "genre": "astronomy",
+          "read": "no"
+     }
+]

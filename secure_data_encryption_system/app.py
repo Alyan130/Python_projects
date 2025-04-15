@@ -135,7 +135,7 @@ match choice:
         
      for index, encryption in enumerate(user_encryptions):
         with st.expander(f"Encryption {index + 1}"):
-           decryption_passkey = st.text_input(f"Enter decryption passkey for item {index + 1}:",                                     type="password", key=f"passkey_{index}")
+           decryption_passkey = st.text_input(f"Enter decryption passkey for item {index + 1}:",    type="password", key=f"passkey_{index}")
                 
            if st.button(f"Decrypt", key=f'button{index+1}'):
                if not decryption_passkey:

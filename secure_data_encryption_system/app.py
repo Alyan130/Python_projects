@@ -16,7 +16,6 @@ if "username" not in st.session_state:
 if "user_attempts" not in st.session_state:
     st.session_state["user_attempts"] = {} 
 
-header_container = st.container()
 st.markdown("""
     <style>
     div.stButton button {
@@ -25,12 +24,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+header_container = st.container()
 left_col, right_col = header_container.columns([4, 1])
 
 with right_col:
-    if st.session_state.logged_in:
-     if st.button("Logout"):
-        st.session_state.clear()
+    logged_in = st.session_state.get("logged_in", False)
+    if logged_in:
+        if st.button("Logout", key="logout_button"):
+            st.session_state["logged_in"] = False
+            st.session_state["username"] = ""
+            st.session_state["user_attempts"] = {}
 
 with left_col:
     st.title("Secure Data System 🔑")
